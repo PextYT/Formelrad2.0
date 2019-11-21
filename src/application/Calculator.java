@@ -47,6 +47,33 @@ public class Calculator {
 		/* Hier auf Grund der vorhanden Werte entscheiden
 		 * welche Methode unten aufgerufen werden muss.
 		 */
+		if(widerstand != 0.0 && leistung != 0.0 && spannung == 0.0 && strom == 0.0) {
+			widerstand = RAusUundP(spannung, leistung);
+			strom = iAusPundU(leistung, spannung);
+		}
+
+		else if (widerstand != 0.0 && leistung == 0.0 && spannung != 0.0 && strom == 0.0) {
+			leistung = pAusUUndR(spannung, widerstand);
+			strom = iAusUundR(spannung, widerstand);
+		}
+
+		else if (widerstand != 0.0 && leistung == 0.0 && spannung == 0.0 && strom != 0.0) {
+			spannung = uAusRundI(widerstand, strom);
+			leistung = pAusRUndI(widerstand, strom);
+		}
+
+		else if (widerstand == 0.0 && leistung != 0.0 && spannung == 0.0 && strom != 0.0) {
+			widerstand = RAusPundI(leistung, strom);
+			spannung = uAusPundI(leistung, strom);
+		}
+
+		else if (widerstand == 0.0 && leistung == 0.0 && spannung != 0.0 && strom != 0.0) {
+			widerstand = RAusUundI(spannung, strom);
+			leistung = pAusUundI(spannung, strom);
+		}
+
+
+
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzuf�gen
