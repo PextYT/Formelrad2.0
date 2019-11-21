@@ -55,4 +55,9 @@ public class Calculator {
 		double p = u*i;
 		return p;
 	}
+
+	public double pAusRUndI(double r, double i) {
+		double p = i * i * r;
+		return p;
+	}
 }
