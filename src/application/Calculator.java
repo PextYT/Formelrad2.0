@@ -50,7 +50,11 @@ public class Calculator {
 		if(widerstand != 0.0 && leistung != 0.0 && spannung == 0.0 && strom == 0.0) {
 			widerstand = RAusUundP(spannung, leistung);
 			strom = iAusPundU(leistung, spannung);
+		} else if (widerstand != 0.0 && leistung == 0.0 && spannung != 0.0 && strom == 0.0) {
+			leistung = pAusUUndR(spannung, widerstand);
+			strom = iAusUundR(spannung, widerstand);
 		}
+
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzuf�gen
