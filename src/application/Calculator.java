@@ -60,4 +60,9 @@ public class Calculator {
 		double p = i * i * r;
 		return p;
 	}
+
+	public double pAusUUndR(double u, double r) {
+		double p = u * u / r;
+		return p;
+	}
 }
