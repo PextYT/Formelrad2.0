@@ -47,6 +47,24 @@ public class Calculator {
 		/* Hier auf Grund der vorhanden Werte entscheiden
 		 * welche Methode unten aufgerufen werden muss.
 		 */
+		int valueCounter = 0;
+
+		if (leistung == 0.0) {
+		    valueCounter++;
+        }
+        if (spannung == 0.0) {
+            valueCounter++;
+        }
+        if (strom == 0.0) {
+            valueCounter++;
+        }
+        if (widerstand == 0.0){
+            valueCounter++;
+        }
+
+        if (valueCounter < 2) {
+            System.out.println("more than two Fields have a value");
+        }
 		if(widerstand != 0.0 && leistung != 0.0 && spannung == 0.0 && strom == 0.0) {
 			widerstand = RAusUundP(spannung, leistung);
 			strom = iAusPundU(leistung, spannung);
