@@ -90,25 +90,25 @@ public class Calculator {
 			leistung = pAusUundI(spannung, strom);
 		}
 
-
+		else if (widerstand != 0.0 && leistung != 0.0 && spannung == 0.0 && strom == 0.0) {
+			spannung = uAusPundR(leistung, widerstand);
+			strom = iAusPundR(leistung, widerstand);
+		}
 
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzuf�gen
 	 */
 	public double pAusUundI(double u, double i) {
-		double p = u*i;
-		return p;
+		return u*i;
 	}
 
 	public double pAusRUndI(double r, double i) {
-		double p = i * i * r;
-		return p;
+		return r * (i * i);
 	}
 
 	public double pAusUUndR(double u, double r) {
-		double p = u * u / r;
-		return p;
+		return  (u * u) / r;
 	}
     public double uAusRundI(double r, double i) {
         return r*i;
@@ -129,10 +129,10 @@ public class Calculator {
 		return u/r;
 	}
     public double RAusUundP(double u, double p) {
-        return u*u/p;
+        return (u*u)/p;
     }
     public double RAusPundI(double p, double i) {
-        return p/i*i;
+        return p/(i*i);
     }
     public double RAusUundI(double u, double i) {
         return u/i;
